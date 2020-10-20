@@ -15,6 +15,11 @@ import org.springframework.util.DigestUtils;
  */
 @Component
 public class MyPasswordEncoder implements PasswordEncoder {
+    /**
+     * 对输入的密码进行加密。返回16进制MD5字符串
+     * @param rawPassword
+     * @return
+     */
     @Override
     public String encode(CharSequence rawPassword) {
         return DigestUtils.md5DigestAsHex(rawPassword.toString().getBytes());
